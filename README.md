@@ -1,6 +1,5 @@
-# Base de code du projet P6 - Parcours Front-end
+# Projet Fisheye
 
-## Démarrer le projet
+GitHub Pages : https://axel93183.github.io/Fisheye.com/
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
-
+GitHub : https://github.com/Axel93183
