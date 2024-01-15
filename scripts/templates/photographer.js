@@ -13,20 +13,23 @@ function photographerTemplate(dataPhotographers) {
         const h2 = document.createElement('h2');
         h2.textContent = name;
 
-        const h3 = document.createElement('h3');
-        h3.textContent = city + ", " + country;
+        const locationArea = document.createElement('p');
+        locationArea.textContent = city + ", " + country;
+        locationArea.className = 'location'
 
-        const h4 = document.createElement('h4')
-        h4.textContent = tagline
+        const tagLine = document.createElement('p')
+        tagLine.textContent = tagline;
+        tagLine.className = 'tagline'
 
-        const p = document.createElement('p')
-        p.textContent = price+"€/jour"
+        const pricePerDay = document.createElement('p')
+        pricePerDay.textContent = price + "€/jour"
+        pricePerDay.className = 'price'
 
-        article.appendChild(img);
         article.appendChild(h2);
-        article.appendChild(h3);
-        article.appendChild(h4);
-        article.appendChild(p);
+        article.appendChild(img);
+        article.appendChild(locationArea);
+        article.appendChild(tagLine);
+        article.appendChild(pricePerDay);
         return (article);
     }
     return { dataPhotographers, getUserCardDOM }

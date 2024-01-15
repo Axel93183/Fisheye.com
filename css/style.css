@@ -44,28 +44,33 @@ h1 {
   font-weight: 400;
   white-space: nowrap;
   margin-bottom: 0;
+  order: 2;
 }
 
-.photographer_section article h3 {
+.photographer_section article .location {
   color: #901c1c;
   font-size: 13px;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 3px;
+  order: 3;
 }
 
-.photographer_section article h4 {
+.photographer_section article .tagline {
+  color: black;
   font-size: 10px;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 3px;
+  order: 4;
 }
 
-.photographer_section article p {
+.photographer_section article .price {
   color: #757575;
   font-size: 9px;
   font-weight: 400;
   margin: 0;
+  order: 5;
 }
 
 .photographer_section article img {
@@ -73,4 +78,5 @@ h1 {
   width: 200px;
   border-radius: 50%;
   object-fit: cover;
+  order: 1;
 }
