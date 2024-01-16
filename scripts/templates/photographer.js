@@ -5,6 +5,8 @@ function photographerTemplate(dataPhotographers) {
 
     function getUserCardDOM() {
         const article = document.createElement('article');
+        article.tabIndex = 0;
+        article.setAttribute('aria-label', `Photographe ${name}, basé à ${city}, ${country} ayant pour slogan: ${tagline}. Tarif : ${price}€ par jour.`);
 
         const img = document.createElement('img');
         img.setAttribute("src", picture)
