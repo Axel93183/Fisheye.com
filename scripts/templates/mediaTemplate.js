@@ -1,5 +1,5 @@
-function mediaTemplate(dataMedia) {
-    const { id, photographerId, title, image, video, likes, date, price} = dataMedia;
-    console.log(dataMedia);
-    return dataMedia
+function mediaTemplate(dataMedias) {
+    const { id, photographerId, title, image, video, likes, date, price} = dataMedias;
+    console.log(dataMedias);
+    return {dataMedias}
 }

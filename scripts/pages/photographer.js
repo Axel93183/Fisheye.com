@@ -1,12 +1,19 @@
-//Mettre le code JavaScript lié à la page photographer.html
-
 async function getMedias() {
     const response = await fetch('data/photographers.json');
     const data = await response.json();
-    console.log(data);
     return data;
 }
 
+async function main() {
+    const mediasData = await getMedias()
+    console.log(mediasData);
 
-getMedias();
+    mediasData.media
+        // Ici, je transforme mon tableau de données en un tableau de classe Media
+        .map(media => new Media(media))
+        .forEach(media => {
+            console.log(media);
+        });
+}
 
+main();
