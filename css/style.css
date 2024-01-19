@@ -81,3 +81,9 @@ h1 {
   font-weight: 400;
   margin: 0;
 }
+
+.photograph-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
