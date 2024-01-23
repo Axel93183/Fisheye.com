@@ -18,9 +18,23 @@ h1 {
   margin-right: 100px;
 }
 
+h2 {
+  color: #d3573c;
+  font-weight: 400;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
 .logo {
   height: 50px;
   margin-left: 100px;
+}
+
+.location {
+  color: #901c1c;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 3px;
 }
 
 .photographer_section {
@@ -45,14 +59,11 @@ h1 {
 }
 
 .photographer_section article a h2 {
-  color: #d3573c;
   font-size: 36px;
-  font-weight: 400;
-  white-space: nowrap;
-  margin-bottom: 0;
 }
 
-.photographer_section article a img {
+.photographer_section article a img,
+.photograph-header img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -60,11 +71,7 @@ h1 {
 }
 
 .photographer_section article .location {
-  color: #901c1c;
   font-size: 13px;
-  font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 3px;
 }
 
 .photographer_section article .tagline {
@@ -83,7 +90,25 @@ h1 {
 }
 
 .photograph-header {
+  background-color: #fafafa;
+  height: 300px;
+  margin: 0 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 56px 50px;
+}
+
+.photograph-header article h2 {
+  font-size: 64px;
+}
+
+.photograph-header article .location {
+  font-size: 24px;
+}
+
+.photograph-header article .tagline {
+  font-size: 18px;
+  font-weight: 400;
+  color: #525252;
 }

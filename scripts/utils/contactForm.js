@@ -1,13 +1,18 @@
+const contactButton = document.getElementById("contact_button");
+contactButton.setAttribute("aria-label", "Contactez-moi");
+
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "block";
+  const modal = document.getElementById("contact_modal");
+  modal.style.display = "block";
 }
 
-document.getElementById("contact_button").addEventListener("click", displayModal)
+contactButton.addEventListener("click", displayModal);
+
+const closeCross = document.getElementById("close-cross");
 
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+  const modal = document.getElementById("contact_modal");
+  modal.style.display = "none";
 }
 
-document.getElementById("close-cross").addEventListener("click", closeModal)
+closeCross.addEventListener("click", closeModal);
