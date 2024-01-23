@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <title>Fisheye - photographe</title>
 
-  <title>Fisheye - photographe </title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="/scripts/models/Photographer.js" defer></script>
+    <script src="/scripts/models/Media.js" defer></script>
+    <script src="/scripts/templates/photographerTemplate.js" defer></script>
+    <script src="/scripts/templates/infosTemplate.js" defer></script>
+    <script src="/scripts/templates/mediaTemplate.js" defer></script>
+    <script src="/scripts/pages/photographer.js" defer></script>
+    <script src="/scripts/utils/contactForm.js" defer></script>
+  </head>
 
-  <script src="/scripts/models/Photographer.js" defer></script>
-  <script src="/scripts/models/Media.js" defer></script>
-  <script src="/scripts/templates/photographerTemplate.js" defer></script>
-  <script src="/scripts/templates/infosTemplate.js" defer></script>
-  <script src="/scripts/templates/mediaTemplate.js" defer></script>
-  <script src="/scripts/pages/photographer.js" defer></script>
-  <script src="/scripts/utils/contactForm.js" defer></script>
-
-</head>
-
-<body>
-  <header>
-    <a href="/index.html">
-      <img src="assets/images/logo.png" class="logo" alt="Fisheye Page d'accueil" />
-    </a>
-  </header>
-  <main id="main">
-    <div class="photograph-header">
-      <button id="contact_button" class="contact_button">Contactez-moi</button>
-    </div>
-  </main>
-  <div id="contact_modal">
-    <div class="modal">
-      <header>
-        <h2>Contactez-moi</h2>
-        <img id="close-cross" src="assets/icons/close.svg" />
-      </header>
-      <form>
-        <div>
-          <label>Prénom</label>
-          <input />
+  <body>
+    <header>
+      <a href="/index.html">
+        <img
+          src="assets/images/logo.png"
+          class="logo"
+          alt="Fisheye Page d'accueil"
+        />
+      </a>
+    </header>
+    <main id="main">
+      <section class="photograph-header">
+        <button id="contact_button" class="contact_button">
+          Contactez-moi
+        </button>
+      </section>
+      <section class="photograph-media">
+        <div class="sorting">
+          <p>Trier par</p>
+          <select id="sort-menu" aria-label="Order by">
+            <option value="popularite">Popularité</option>
+            <option value="date">Date</option>
+            <option value="titre">Titre</option>
+          </select>
         </div>
-        <button class="contact_button">Envoyer</button>
-      </form>
+      </section>
+    </main>
+    <div id="contact_modal">
+      <div class="modal">
+        <header>
+          <h2>Contactez-moi</h2>
+          <img id="close-cross" src="assets/icons/close.svg" />
+        </header>
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input />
+          </div>
+          <button class="contact_button">Envoyer</button>
+        </form>
+      </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

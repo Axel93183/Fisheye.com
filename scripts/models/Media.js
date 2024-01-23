@@ -8,5 +8,6 @@ class Media {
         this.likes = dataMedia.likes
         this.date = dataMedia.date
         this.price = dataMedia.price
+        this.picture = `assets/medias/photographerID-${dataMedia.photographerId}/${dataMedia.image}`
     }
 }
