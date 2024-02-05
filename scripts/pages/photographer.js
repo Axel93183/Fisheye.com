@@ -37,6 +37,9 @@ async function displayMedia() {
     });
 }
 
-displayInfos();
+async function main() {
+  displayInfos();
+  displayMedia();
+}
 
-displayMedia();
+main();
