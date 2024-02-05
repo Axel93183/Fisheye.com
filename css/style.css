@@ -180,3 +180,25 @@ h2 {
 .media-infos .likes-container svg {
   fill: #901c1c;
 }
+
+#main > .insert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  height: 0px;
+  padding: 30px;
+  background-color: #d3573c;
+  border-radius: 5px 5px 0 0;
+  position: fixed;
+  bottom: 0;
+  right: 35px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#main > .insert > .totalLikes-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

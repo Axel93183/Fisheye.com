@@ -49,6 +49,5 @@ function mediaTemplate(dataMedias) {
     return article;
   }
 
-  console.log(dataMedias);
   return { dataMedias, getMediaCardDOM };
 }
