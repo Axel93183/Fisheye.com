@@ -27,13 +27,19 @@ async function displayMedia() {
   medias.appendChild(mediaSection);
 
   const mediasData = await getDatas();
-  mediasData.media
-    .filter((media) => media.photographerId === photographerId)
-    .map((filteredMedia) => new Media(filteredMedia))
-    .forEach((media) => {
-      const mediaCardDOM = mediaTemplate(media).getMediaCardDOM();
-      mediaSection.appendChild(mediaCardDOM);
-    });
+
+  const filteredMedia = mediasData.media.filter(
+    (media) => media.photographerId === photographerId
+  );
+
+  const filteredMediaMapped = filteredMedia.map(
+    (filteredMedia) => new MediaFactory(filteredMedia)
+  );
+
+  filteredMediaMapped.forEach((media) => {
+    const mediaCardDOM = mediaTemplate(media).getMediaCardDOM();
+    mediaSection.appendChild(mediaCardDOM);
+  });
 }
 
 async function displayLikesInsert() {
@@ -49,7 +55,6 @@ async function displayLikesInsert() {
     (photographer) => photographer.id === photographerId
   );
 
-  console.log(photographersData.photographers);
   const price = document.createElement("p");
   price.textContent = `${photographer.price}€ / jour`;
 

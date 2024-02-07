@@ -1,12 +1,10 @@
-function mediaTemplate(dataMedias) {
-  const media = new Media(dataMedias);
-
+function mediaTemplate(media) {
   function getMediaCardDOM() {
     const article = document.createElement("article");
 
-    const img = document.createElement("img");
-    img.setAttribute("src", media.picture);
-    img.setAttribute("alt", media.title);
+    const mediaTag = document.createElement(media.htmlTag);
+    mediaTag.setAttribute("src", media.url);
+    mediaTag.setAttribute("alt", media.title);
 
     const mediaInfos = document.createElement("div");
     mediaInfos.className = "media-infos";
@@ -43,11 +41,11 @@ function mediaTemplate(dataMedias) {
     mediaInfos.appendChild(title);
     mediaInfos.appendChild(likesContainer);
 
-    article.appendChild(img);
+    article.appendChild(mediaTag);
     article.appendChild(mediaInfos);
 
     return article;
   }
 
-  return { dataMedias, getMediaCardDOM };
+  return { media, getMediaCardDOM };
 }
