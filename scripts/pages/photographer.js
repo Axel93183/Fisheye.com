@@ -46,7 +46,7 @@ async function displayLikesInsert() {
   const photographersData = await getDatas();
   const mediasData = await getDatas();
 
-  const mainSection = document.getElementById("main");
+  const mainSection = document.getElementById("main-photographer-page");
 
   const insert = document.createElement("div");
   insert.className = "insert";

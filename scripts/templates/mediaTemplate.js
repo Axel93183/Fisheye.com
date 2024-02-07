@@ -5,6 +5,9 @@ function mediaTemplate(media) {
     const mediaTag = document.createElement(media.htmlTag);
     mediaTag.setAttribute("src", media.url);
     mediaTag.setAttribute("alt", media.title);
+    if (media instanceof VideoMedia) {
+      mediaTag.setAttribute("controls", "");
+    }
 
     const mediaInfos = document.createElement("div");
     mediaInfos.className = "media-infos";
