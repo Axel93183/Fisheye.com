@@ -1,5 +1,17 @@
+#body {
+  position: relative;
+}
+
 #contact_modal {
   display: none;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .contact_button {
@@ -19,19 +31,37 @@
 .contact_button:hover {
   background-color: #db8876;
   color: black;
+  border: 2px solid black;
 }
 
 .modal {
   border-radius: 5px;
   background-color: #db8876;
   width: 50%;
+  max-width:669px;
+  min-height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
   margin: auto;
+  position: relative;
+  top: 128px;
 }
+
+
+/* .pop-up-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+} */
 
 .modal header {
   justify-content: space-between;
@@ -73,4 +103,11 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+  font-size: 32px;
+}
+
+form textarea{
+  width: 100%;
+  font-size: 32px;
+
 }
