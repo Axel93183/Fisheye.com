@@ -21,25 +21,11 @@ function mediaTemplate(media) {
     const likes = document.createElement("p");
     likes.textContent = media.likes;
 
-    const likeSvg = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "svg"
-    );
-    likeSvg.setAttribute("width", "24");
-    likeSvg.setAttribute("height", "24");
-    const svgPath = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "path"
-    );
-    svgPath.setAttribute(
-      "d",
-      "M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151 0.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402"
-    );
-
-    likeSvg.appendChild(svgPath);
+    const likeIcon = document.createElement("i");
+    likeIcon.className = "fa-solid fa-heart";
 
     likesContainer.appendChild(likes);
-    likesContainer.appendChild(likeSvg);
+    likesContainer.appendChild(likeIcon);
 
     mediaInfos.appendChild(title);
     mediaInfos.appendChild(likesContainer);

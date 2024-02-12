@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 
     <title>Fisheye - photographe</title>
@@ -14,10 +18,13 @@
 
     <script src="scripts/models/Photographer.js" defer></script>
     <script src="scripts/models/Media.js" defer></script>
+    <script src="scripts/models/ImageMedia.js" defer></script>
+    <script src="scripts/models/VideoMedia.js" defer></script>
     <script src="scripts/factories/MediaFactory.js" defer></script>
     <script src="scripts/templates/photographerTemplate.js" defer></script>
     <script src="scripts/templates/infosTemplate.js" defer></script>
     <script src="scripts/templates/mediaTemplate.js" defer></script>
+    <script src="scripts/templates/likeTemplate.js" defer></script>
     <script src="scripts/pages/photographer.js" defer></script>
     <script src="scripts/utils/contactForm.js" defer></script>
   </head>
@@ -52,7 +59,7 @@
     <div id="contact_modal">
       <div class="modal">
         <header>
-          <h2 class="modal-title">Contactez-moi</h2>
+          <h2>Contactez-moi</h2>
           <img id="close-cross" src="assets/icons/close.svg" />
         </header>
         <form name="reserve" action="photographer.html" method="get">
@@ -85,7 +92,7 @@
           </div>
           <div class="formData">
             <label for="message">Votre message</label><br />
-            <textarea name="message" id="message" rows="10"></textarea><br />
+            <textarea name="message" id="message" rows="5"></textarea><br />
           </div>
           <button class="contact_button">Envoyer</button>
         </form>

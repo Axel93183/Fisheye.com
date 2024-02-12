@@ -168,17 +168,18 @@ h2 {
 }
 
 .media-infos h3,
-.media-infos .likes-container p {
+.media-infos .likes-container p,
+.media-infos .likes-container i {
   font-size: 24px;
   font-style: normal;
-  font-weight: 400;
-}
-.media-infos .likes-container p {
-  font-weight: 500;
 }
 
-.media-infos .likes-container svg {
-  fill: #901c1c;
+.media-infos h3 {
+  font-weight: 400;
+}
+
+.media-infos .likes-container p {
+  font-weight: 500;
 }
 
 #main-photographer-page {
