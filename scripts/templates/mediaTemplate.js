@@ -5,9 +5,17 @@ function mediaTemplate(media) {
     const mediaTag = document.createElement(media.htmlTag);
     mediaTag.setAttribute("src", media.url);
     mediaTag.setAttribute("alt", media.title);
-    if (media instanceof VideoMedia) {
-      mediaTag.setAttribute("controls", "");
+
+    const mediaLink = document.createElement('a')
+    mediaLink.setAttribute('href', media.url)
+    if (media instanceof ImageMedia) {
+      mediaLink.setAttribute('aria-label', `Il s'agit d'une photographie : ${media.title}`);
     }
+    if (media instanceof VideoMedia) {
+      mediaLink.setAttribute('aria-label', `Il s'agit d'une séquence vidéo : ${media.title}`);
+    }
+
+    mediaLink.appendChild(mediaTag)
 
     const mediaInfos = document.createElement("div");
     mediaInfos.className = "media-infos";
@@ -23,6 +31,8 @@ function mediaTemplate(media) {
 
     const likeIcon = document.createElement("i");
     likeIcon.className = "fa-solid fa-heart";
+    likeIcon.setAttribute('aria-label', 'bouton pour liker le média')
+    likeIcon.setAttribute('role', 'button')
 
     likesContainer.appendChild(likes);
     likesContainer.appendChild(likeIcon);
@@ -30,7 +40,7 @@ function mediaTemplate(media) {
     mediaInfos.appendChild(title);
     mediaInfos.appendChild(likesContainer);
 
-    article.appendChild(mediaTag);
+    article.appendChild(mediaLink);
     article.appendChild(mediaInfos);
 
     return article;

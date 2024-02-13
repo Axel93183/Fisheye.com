@@ -150,8 +150,8 @@ h2 {
   aspect-ratio: 7/6; /* media size on design model : 350px/300px */
 }
 
-.photograph-media .media-section article img,
-.photograph-media .media-section article video {
+.photograph-media .media-section article a img,
+.photograph-media .media-section article a video {
   width: 100%;
   height: 100%;
   border-radius: 5px;
