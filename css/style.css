@@ -182,6 +182,10 @@ h2 {
   font-weight: 500;
 }
 
+.media-infos .likes-container i:hover {
+  cursor: pointer;
+}
+
 #main-photographer-page {
   padding: 0 100px;
 }

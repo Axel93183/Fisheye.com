@@ -10,25 +10,17 @@ const closeCross = document.getElementById("close-cross");
 function openModal() {
   contactModal.style.display = "block";
 
-  const modalHeader = document.querySelector(".modal header");
-
-  const modalTitle = document.createElement("div");
-  modalTitle.className = "modal-title";
-
   const modalH2 = document.querySelector(".modal header h2");
-  const modalName = document.createElement("h3");
 
   const photographerName = document.querySelector(
     ".photograph-header h2"
   ).textContent;
+  const newText = document.createTextNode(photographerName);
 
-  modalName.textContent = photographerName;
+  const lineBreak = document.createElement("br");
 
-  modalTitle.appendChild(modalH2);
-  modalTitle.appendChild(modalName);
-
-  modalHeader.appendChild(modalTitle);
-  modalHeader.appendChild(closeCross);
+  modalH2.appendChild(lineBreak);
+  modalH2.appendChild(newText);
 }
 
 contactButton.addEventListener("click", openModal);
