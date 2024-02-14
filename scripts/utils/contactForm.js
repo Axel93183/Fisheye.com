@@ -69,8 +69,10 @@ function validateForm() {
     }
 
     if (!isValid) {
-      // error message below the input element if invalid condition
       input.parentNode.appendChild(errorMessageElement);
+      errorMessageElement.setAttribute("aria-live", "assertive"); // aria-live = "assertive" pour que le lecteur d'écran l'annonce immédiatement
+
+      errorMessageElement.focus();
     }
   }
 

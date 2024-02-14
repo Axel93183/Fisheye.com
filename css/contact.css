@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 
-.modal header h2{
+.modal header h2 {
   font-size: 64px;
   font-weight: normal;
   color: black;
@@ -101,4 +101,10 @@ form textarea {
   width: 100%;
   font-size: 32px;
   border-radius: 5px;
+}
+
+.error-message {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 3px;
 }
