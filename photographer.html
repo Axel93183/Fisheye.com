@@ -42,7 +42,12 @@
     </header>
     <main id="main-photographer-page">
       <section class="photograph-header">
-        <button id="contact_button" class="contact_button">
+        <button
+          id="contact_button"
+          class="contact_button"
+          role="button"
+          aria-label="Contactez-moi"
+        >
           Contactez-moi
         </button>
       </section>
@@ -61,25 +66,34 @@
       <div class="modal" role="dialog" aria-labelledby="modalTitle">
         <header>
           <h2 id="modalTitle">Contactez-moi</h2>
-          <img id="close-cross" src="assets/icons/close.svg" />
+          <img
+            id="close-cross"
+            src="assets/icons/close.svg"
+            aria-label="Fermer la fenêtre de contact"
+            tabindex="6"
+          />
         </header>
         <form name="reserve" action="photographer.html" method="post">
           <div class="formData">
-            <label for="first name">Prénom</label><br />
+            <label for="first-name">Prénom</label><br />
             <input
               class="text-control"
               type="text"
-              id="first name"
-              name="first name"
+              id="first-name"
+              name="first"
+              aria-label="Indiquer votre Prénom"
+              tabindex="1"
             /><br />
           </div>
           <div class="formData">
-            <label for="last name">Nom</label><br />
+            <label for="last-name">Nom</label><br />
             <input
               class="text-control"
               type="text"
-              id="last name"
-              name="last name"
+              id="last-name"
+              name="last"
+              aria-label="Indiquer votre Nom"
+              tabindex="2"
             /><br />
           </div>
           <div class="formData">
@@ -89,14 +103,29 @@
               type="email"
               id="email"
               name="email"
+              aria-label="Indiquer votre E-mail"
+              tabindex="3"
             /><br />
           </div>
           <div class="formData">
-            <label for="your message">Votre message</label><br />
-            <textarea name="your message" id="your message" rows="5"></textarea
+            <label for="your-message">Votre message</label><br />
+            <textarea
+              name="message"
+              id="your-message"
+              rows="5"
+              aria-label="Écrivez votre message - 500 caractères max"
+              tabindex="4"
+            ></textarea
             ><br />
           </div>
-          <button name="Send" class="contact_button">Envoyer</button>
+          <button
+            name="Send"
+            class="contact_button"
+            aria-label="Envoyer le formulaire de contact"
+            tabindex="5"
+          >
+            Envoyer
+          </button>
         </form>
       </div>
     </div>
