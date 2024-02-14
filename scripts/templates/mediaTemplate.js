@@ -6,16 +6,22 @@ function mediaTemplate(media) {
     mediaTag.setAttribute("src", media.url);
     mediaTag.setAttribute("alt", media.title);
 
-    const mediaLink = document.createElement('a')
-    mediaLink.setAttribute('href', media.url)
+    const mediaLink = document.createElement("a");
+    mediaLink.setAttribute("href", media.url);
     if (media instanceof ImageMedia) {
-      mediaLink.setAttribute('aria-label', `Il s'agit d'une photographie : ${media.title}`);
+      mediaLink.setAttribute(
+        "aria-label",
+        `Il s'agit d'une photographie : ${media.title}`
+      );
     }
     if (media instanceof VideoMedia) {
-      mediaLink.setAttribute('aria-label', `Il s'agit d'une séquence vidéo : ${media.title}`);
+      mediaLink.setAttribute(
+        "aria-label",
+        `Il s'agit d'une séquence vidéo : ${media.title}`
+      );
     }
 
-    mediaLink.appendChild(mediaTag)
+    mediaLink.appendChild(mediaTag);
 
     const mediaInfos = document.createElement("div");
     mediaInfos.className = "media-infos";
@@ -31,8 +37,12 @@ function mediaTemplate(media) {
 
     const likeIcon = document.createElement("i");
     likeIcon.className = "fa-solid fa-heart";
-    likeIcon.setAttribute('aria-label', 'bouton pour liker le média')
-    likeIcon.setAttribute('role', 'button')
+    likeIcon.setAttribute("aria-label", "bouton pour liker le média");
+    likeIcon.setAttribute("role", "button");
+    likeIcon.setAttribute("tabindex", "0");
+
+    likeIcon.addEventListener("click", handleLikeClick);
+    likeIcon.addEventListener("keypress", handleLikeClick);
 
     likesContainer.appendChild(likes);
     likesContainer.appendChild(likeIcon);
@@ -49,4 +59,24 @@ function mediaTemplate(media) {
   return { media, getMediaCardDOM };
 }
 
+// Fonction pour gérer les clics sur les icônes "like"
+function handleLikeClick(e) {
+  if (e.key !== "Enter" && e.type !== "click") {
+    return;
+  }
 
+  const likeCountElement = e.target.parentNode.querySelector("p");
+  let likeCount = parseInt(likeCountElement.textContent);
+  likeCount++;
+  likeCountElement.textContent = likeCount;
+
+  const totalLikesCountElement = document.querySelector(
+    ".totalLikes-container p"
+  );
+  let totalCount = parseInt(totalLikesCountElement.textContent);
+  totalCount++;
+  totalLikesCountElement.textContent = totalCount;
+
+  e.target.removeEventListener("click", handleLikeClick);
+  e.target.removeEventListener("keypress", handleLikeClick);
+}
