@@ -56,6 +56,21 @@ function mediaTemplate(media) {
     return article;
   }
 
+  function sortSelect() {
+    const selectElement = document.getElementById("sort-menu");
+    const selectedOption = selectElement.value;
+
+    if (selectedOption === "titre") {
+      sortByTitle();
+    }
+    if (selectedOption === "popularite") {
+      sortByLike();
+    }
+  }
+
+  document.getElementById("sort-menu").onchange = sortSelect;
+  sortSelect();
+
   return { media, getMediaCardDOM };
 }
 
