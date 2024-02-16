@@ -40,6 +40,12 @@ async function displayMedia() {
     const mediaCardDOM = mediaTemplate(media).getMediaCardDOM();
     mediaSection.appendChild(mediaCardDOM);
   });
+
+  const mediaElements = document.querySelectorAll(".media-section a");
+  mediaElements.forEach(function (mediaElement) {
+    mediaElement.addEventListener("click", displayLightBox);
+    mediaElement.addEventListener("keypress", displayLightBox);
+  });
 }
 
 async function main() {

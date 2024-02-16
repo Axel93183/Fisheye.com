@@ -37,6 +37,12 @@ closeCross.addEventListener("keypress", (e) => {
   }
   closeModal(e);
 });
+window.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") {
+    return;
+  }
+  closeModal(e);
+});
 
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

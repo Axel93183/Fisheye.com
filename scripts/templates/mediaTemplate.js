@@ -59,7 +59,6 @@ function mediaTemplate(media) {
   return { media, getMediaCardDOM };
 }
 
-// Fonction pour gérer les clics sur les icônes "like"
 function handleLikeClick(e) {
   if (e.key !== "Enter" && e.type !== "click") {
     return;
