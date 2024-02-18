@@ -46,6 +46,24 @@ async function displayMedia() {
     mediaElement.addEventListener("click", displayLightBox);
     mediaElement.addEventListener("keypress", displayLightBox);
   });
+
+  function sortSelect() {
+    const selectElement = document.getElementById("sort-menu");
+    const selectedOption = selectElement.value;
+
+    if (selectedOption === "titre") {
+      sortByTitle();
+    }
+    if (selectedOption === "popularite") {
+      sortByLike();
+    }
+    if (selectedOption === "date") {
+      sortByDate();
+    }
+  }
+
+  document.getElementById("sort-menu").onchange = sortSelect;
+  sortSelect();
 }
 
 async function main() {
