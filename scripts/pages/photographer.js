@@ -62,8 +62,7 @@ async function displayMedia() {
     }
   }
 
-  document.getElementById("sort-menu").onchange = sortSelect;
-  sortSelect();
+  document.getElementById("sort-menu").addEventListener("change", sortSelect);
 }
 
 async function main() {
