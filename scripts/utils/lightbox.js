@@ -1,21 +1,25 @@
 const myLightbox = document.getElementById("myLightbox");
 let lightboxCreated = false;
 
-function displayLightBox(e) {
+function displayLightBox(e, mediaId) {
   e.preventDefault();
   if (e.key !== "Enter" && e.type !== "click") {
     return;
   }
   if (!lightboxCreated) {
     const mediaElements = document.querySelectorAll(".media-section a");
-    const slideDiv = document.createElement("div");
-    slideDiv.className = "mySlides";
+
+    const mySlides = document.createElement("div");
+    mySlides.className = "mySlides";
 
     mediaElements.forEach(function (mediaElement) {
       const slide = document.createElement("div");
       slide.className = "slide";
+      slide.id = mediaElement.dataset.mediaId;
+
       const mediaContainer = document.createElement("div");
       mediaContainer.className = "media-container";
+
       const mediaTitle = document.createElement("p");
 
       const img = document.createElement("img");
@@ -38,14 +42,26 @@ function displayLightBox(e) {
         slide.appendChild(mediaContainer);
       }
 
-      slideDiv.appendChild(slide);
+      mySlides.appendChild(slide);
     });
 
     const lightboxContainer = document.getElementById("lightboxContainer");
+
     const firstChild = lightboxContainer.children[1];
-    lightboxContainer.insertBefore(slideDiv, firstChild.nextSibling);
+
+    lightboxContainer.insertBefore(mySlides, firstChild.nextSibling);
 
     lightboxCreated = true;
+  }
+
+  const currentSlide = document.getElementById(`${mediaId}`);
+  if (currentSlide) {
+    currentSlide.style.display = "block";
+    document.querySelectorAll(".mySlides .slide").forEach((slide) => {
+      if (slide !== currentSlide) {
+        slide.style.display = "none";
+      }
+    });
   }
 
   myLightbox.style.display = "flex";

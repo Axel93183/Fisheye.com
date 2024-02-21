@@ -6,9 +6,11 @@ function mediaTemplate(media) {
     const mediaTag = document.createElement(media.htmlTag);
     mediaTag.setAttribute("src", media.url);
     mediaTag.setAttribute("alt", media.title);
+    mediaTag.dataset.mediaId = media.id;
 
     const mediaLink = document.createElement("a");
     mediaLink.setAttribute("href", media.url);
+    mediaLink.dataset.mediaId = media.id;
     if (media instanceof ImageMedia) {
       mediaLink.setAttribute(
         "aria-label",

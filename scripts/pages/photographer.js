@@ -41,10 +41,17 @@ async function displayMedia() {
     mediaSection.appendChild(mediaCardDOM);
   });
 
-  const mediaElements = document.querySelectorAll(".media-section a");
+  const mediaElements = document.querySelectorAll(".media-section a ");
+  console.log(mediaElements);
   mediaElements.forEach(function (mediaElement) {
-    mediaElement.addEventListener("click", displayLightBox);
-    mediaElement.addEventListener("keypress", displayLightBox);
+    mediaElement.addEventListener("click", (e) => {
+      const mediaId = e.target.dataset.mediaId;
+      displayLightBox(e, mediaId);
+    });
+    mediaElement.addEventListener("keypress", (e) => {
+      const mediaId = e.target.dataset.mediaId;
+      displayLightBox(e, mediaId);
+    });
   });
 
   function sortSelect() {
