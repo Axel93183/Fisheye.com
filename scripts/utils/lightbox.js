@@ -56,6 +56,7 @@ function displayLightBox(e, mediaId) {
 
   const currentSlide = document.getElementById(`${mediaId}`);
   if (currentSlide) {
+    currentSlide.setAttribute("tabindex", "0");
     currentSlide.style.display = "block";
     document.querySelectorAll(".mySlides .slide").forEach((slide) => {
       if (slide !== currentSlide) {
@@ -65,12 +66,34 @@ function displayLightBox(e, mediaId) {
   }
 
   myLightbox.style.display = "flex";
+
+  myLightbox.focus();
+
+  const nextButton = document.getElementById("nextButton");
+  nextButton.addEventListener("click", goToNextSlide);
+  nextButton.addEventListener("keypress", (e) => {
+    if (e.key !== "Enter") {
+      return;
+    }
+    goToNextSlide(e);
+  });
+
+  const prevButton = document.getElementById("prevButton");
+  prevButton.addEventListener("click", goToPreviousSlide);
+  prevButton.addEventListener("keypress", (e) => {
+    if (e.key !== "Enter") {
+      return;
+    }
+    goToPreviousSlide(e);
+  });
 }
 
 const lbCloseCross = document.querySelector(".lightBoxClose");
 function closeLightbox() {
   myLightbox.style.display = "none";
 }
+
+// Close lightBox events
 lbCloseCross.addEventListener("click", closeLightbox);
 lbCloseCross.addEventListener("keypress", (e) => {
   if (e.key !== "Enter") {
@@ -84,3 +107,31 @@ window.addEventListener("keydown", (e) => {
   }
   closeLightbox(e);
 });
+
+// Next slide function
+function goToNextSlide() {
+  const slides = document.querySelectorAll(".mySlides .slide");
+  let currentIndex = 0;
+  for (let i = 0; i < slides.length; i++) {
+    if (slides[i].style.display === "block") {
+      currentIndex = i;
+    }
+  }
+  slides[currentIndex].style.display = "none";
+  const nextIndex = (currentIndex + 1) % slides.length;
+  slides[nextIndex].style.display = "block";
+}
+
+// Previous slide function
+function goToPreviousSlide() {
+  const slides = document.querySelectorAll(".mySlides .slide");
+  let currentIndex = 0;
+  for (let i = 0; i < slides.length; i++) {
+    if (slides[i].style.display === "block") {
+      currentIndex = i;
+    }
+  }
+  slides[currentIndex].style.display = "none";
+  const previousIndex = (currentIndex - 1 + slides.length) % slides.length;
+  slides[previousIndex].style.display = "block";
+}
