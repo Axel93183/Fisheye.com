@@ -72,20 +72,19 @@ function displayLightBox(e, mediaId) {
 
   const nextButton = document.getElementById("nextButton");
   nextButton.addEventListener("click", goToNextSlide);
-  nextButton.addEventListener("keypress", (e) => {
-    if (e.key !== "Enter") {
-      return;
-    }
-    goToNextSlide(e);
-  });
 
   const prevButton = document.getElementById("prevButton");
   prevButton.addEventListener("click", goToPreviousSlide);
-  prevButton.addEventListener("keypress", (e) => {
-    if (e.key !== "Enter") {
-      return;
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      goToPreviousSlide(e);
     }
-    goToPreviousSlide(e);
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      goToNextSlide(e);
+    }
   });
 }
 
