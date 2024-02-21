@@ -36,6 +36,7 @@ function displayLightBox(e, mediaId) {
       if (mediaElement.querySelector("video")) {
         video.src = mediaElement.querySelector("video").getAttribute("src");
         video.alt = mediaElement.querySelector("video").getAttribute("alt");
+        video.setAttribute("controls", "");
         mediaTitle.textContent = video.alt;
         mediaContainer.appendChild(video);
         mediaContainer.appendChild(mediaTitle);
