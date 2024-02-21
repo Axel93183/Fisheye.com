@@ -107,20 +107,26 @@ function validateForm() {
 // submit form event
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+
+  let firstInput = form.first.value;
+  let lastInput = form.last.value;
+  let emailInput = form.email.value;
+  let messageInput = form.message.value;
+
+  console.log("Contenu du champs Prénom : ", firstInput);
+  console.log("Contenu du champs Nom : ", lastInput);
+  console.log("Contenu du champs E-mail : ", emailInput);
+  console.log("Contenu du champs Message : ", messageInput);
+
   if (validateForm()) {
     console.log("================================");
     console.log("Votre message a bien été envoyé.");
     console.log("================================");
 
-    const firstInput = form.first;
-    const lastInput = form.last;
-    const emailInput = form.email;
-    const messageInput = form.message;
-
-    firstInput.value = "";
-    lastInput.value = "";
-    emailInput.value = "";
-    messageInput.value = "";
+    firstInput = "";
+    lastInput = "";
+    emailInput = "";
+    messageInput = "";
 
     closeModal();
   }
