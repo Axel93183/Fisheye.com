@@ -68,8 +68,6 @@ function displayLightBox(e, mediaId) {
 
   myLightbox.style.display = "flex";
 
-  myLightbox.focus();
-
   const nextButton = document.getElementById("nextButton");
   nextButton.addEventListener("click", goToNextSlide);
 

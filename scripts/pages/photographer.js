@@ -1,25 +1,28 @@
+// Extract Photographer ID From the Query Parameter in the URL
 const photographerId = parseInt(
   new URLSearchParams(window.location.search).get("id")
 );
 
+// Fetch Data
 async function getDatas() {
   const response = await fetch("data/photographers.json");
   const data = await response.json();
   return data;
 }
 
+// Display Photographer's Information
 async function displayInfos() {
   const photographersData = await getDatas();
 
   photographersData.photographers
     .filter((photographer) => photographer.id === photographerId)
-
     .forEach((photographer) => {
       const photographerInfos = infosTemplate(photographer);
       photographerInfos.getInfosCardDOM();
     });
 }
 
+// Display Photographer's Media
 async function displayMedia() {
   const medias = document.querySelector(".photograph-media");
   const mediaSection = document.createElement("div");
@@ -41,8 +44,8 @@ async function displayMedia() {
     mediaSection.appendChild(mediaCardDOM);
   });
 
+  // Lightbox Display Events
   const mediaElements = document.querySelectorAll(".media-section a ");
-  console.log(mediaElements);
   mediaElements.forEach(function (mediaElement) {
     mediaElement.addEventListener("click", (e) => {
       const mediaId = e.target.dataset.mediaId;
@@ -54,6 +57,7 @@ async function displayMedia() {
     });
   });
 
+  // Sort Medias
   function sortSelect() {
     const selectElement = document.getElementById("sort-menu");
     const selectedOption = selectElement.value;
@@ -69,13 +73,16 @@ async function displayMedia() {
     }
   }
 
+  // Sort Event
   document.getElementById("sort-menu").addEventListener("change", sortSelect);
 }
 
+// Main function
 async function main() {
   displayInfos();
   displayMedia();
   displayLikesInsert();
 }
 
+// Call Main func. to start
 main();

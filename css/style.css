@@ -1,6 +1,7 @@
 @import url("contact.css");
 @import url("lightbox.css");
 
+/* General */
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
@@ -37,7 +38,7 @@ h2 {
   margin-top: 0;
   margin-bottom: 3px;
 }
-
+/* Home Page */
 .photographer_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -89,7 +90,7 @@ h2 {
   font-weight: 400;
   margin: 0;
 }
-
+/* Photographer Page */
 .photograph-header {
   background-color: #fafafa;
   height: 300px;
@@ -136,6 +137,7 @@ h2 {
   padding: 0 20px;
 }
 
+/* Photographer Medias */
 .photograph-media {
   width: 100%;
 }
@@ -160,6 +162,7 @@ h2 {
   object-fit: cover;
 }
 
+/* The Likes */
 .photograph-media article .media-infos,
 .media-infos .likes-container {
   display: flex;
