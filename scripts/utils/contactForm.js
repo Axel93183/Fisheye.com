@@ -3,7 +3,7 @@ const contactModal = document.getElementById("contact_modal");
 const form = document.forms.reserve;
 const contactButton = document.getElementById("contact_button");
 const closeCross = document.getElementById("close-cross");
-const modalH2 = document.querySelector(".modal header h2");
+const modalTitle = document.querySelector(".modal header h2");
 const lineBreak = document.createElement("br");
 const firstInput = document.getElementById("first-name");
 
@@ -14,8 +14,8 @@ function openModal() {
   const newText = document.createTextNode(photographerName);
   contactModal.style.display = "block";
 
-  modalH2.appendChild(lineBreak);
-  modalH2.appendChild(newText);
+  modalTitle.appendChild(lineBreak);
+  modalTitle.appendChild(newText);
 
   firstInput.focus();
 }
@@ -27,7 +27,10 @@ function closeModal() {
   body.style.overflow = "initial";
 
   lineBreak.remove();
-  modalH2.lastChild.remove();
+
+  if (modalTitle.lastChild) {
+    modalTitle.lastChild.remove();
+  }
 }
 
 closeCross.addEventListener("click", closeModal);
@@ -105,9 +108,9 @@ function validateForm() {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   if (validateForm()) {
-    console.log("==========================");
+    console.log("================================");
     console.log("Votre message a bien été envoyé.");
-    console.log("==========================");
+    console.log("================================");
 
     const firstInput = form.first;
     const lastInput = form.last;
