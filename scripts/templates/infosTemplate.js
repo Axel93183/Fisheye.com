@@ -2,8 +2,8 @@ function infosTemplate(dataPhotographer) {
   const photographer = new Photographer(dataPhotographer);
 
   function getInfosCardDOM() {
-    const h2 = document.createElement("h2");
-    h2.textContent = photographer.name;
+    const h1 = document.createElement("h1");
+    h1.textContent = photographer.name;
 
     const locationArea = document.createElement("p");
     locationArea.textContent = `${photographer.city}, ${photographer.country}`;
@@ -14,7 +14,7 @@ function infosTemplate(dataPhotographer) {
     tagLine.className = "tagline";
 
     const article = document.createElement("article");
-    article.appendChild(h2);
+    article.appendChild(h1);
     article.appendChild(locationArea);
     article.appendChild(tagLine);
 

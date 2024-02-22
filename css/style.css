@@ -35,7 +35,7 @@ h2 {
 .location {
   color: #901c1c;
   font-weight: 400;
-  margin-top: 0;
+  margin-top: 0px;
   margin-bottom: 3px;
 }
 /* Home Page */
@@ -100,7 +100,11 @@ h2 {
   padding: 56px 50px;
 }
 
-.photograph-header article h2 {
+.photograph-header article h1 {
+  color: #d3573c;
+  font-weight: 400;
+  white-space: nowrap;
+  margin: 0;
   font-size: 64px;
 }
 
