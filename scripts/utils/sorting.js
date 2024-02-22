@@ -33,3 +33,22 @@ function sortByDate() {
     return dateB - dateA;
   });
 }
+
+// Sort Medias
+function sortSelect() {
+  const selectElement = document.getElementById("sort-menu");
+  const selectedOption = selectElement.value;
+
+  if (selectedOption === "titre") {
+    sortByTitle();
+  }
+  if (selectedOption === "popularite") {
+    sortByLike();
+  }
+  if (selectedOption === "date") {
+    sortByDate();
+  }
+}
+
+// Sort Event
+document.getElementById("sort-menu").addEventListener("change", sortSelect);

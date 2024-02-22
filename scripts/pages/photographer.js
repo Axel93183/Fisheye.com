@@ -46,7 +46,7 @@ async function displayMedia() {
 
   // Lightbox Display Events
   const mediaElements = document.querySelectorAll(".media-section a ");
-  mediaElements.forEach(function (mediaElement) {
+  mediaElements.forEach((mediaElement) => {
     mediaElement.addEventListener("click", (e) => {
       const mediaId = e.target.dataset.mediaId;
       displayLightBox(e, mediaId);
@@ -56,25 +56,6 @@ async function displayMedia() {
       displayLightBox(e, mediaId);
     });
   });
-
-  // Sort Medias
-  function sortSelect() {
-    const selectElement = document.getElementById("sort-menu");
-    const selectedOption = selectElement.value;
-
-    if (selectedOption === "titre") {
-      sortByTitle();
-    }
-    if (selectedOption === "popularite") {
-      sortByLike();
-    }
-    if (selectedOption === "date") {
-      sortByDate();
-    }
-  }
-
-  // Sort Event
-  document.getElementById("sort-menu").addEventListener("change", sortSelect);
 }
 
 // Main function

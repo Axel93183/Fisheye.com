@@ -44,8 +44,8 @@ function mediaTemplate(media) {
     likeIcon.setAttribute("role", "button");
     likeIcon.setAttribute("tabindex", "0");
 
-    likeIcon.addEventListener("click", handleLikeClick);
-    likeIcon.addEventListener("keypress", handleLikeClick);
+    likeIcon.addEventListener("click", mediaCardLike);
+    likeIcon.addEventListener("keypress", mediaCardLike);
 
     likesContainer.appendChild(likes);
     likesContainer.appendChild(likeIcon);
@@ -62,7 +62,8 @@ function mediaTemplate(media) {
   return { media, getMediaCardDOM };
 }
 
-function handleLikeClick(e) {
+/* Media Card Like */
+function mediaCardLike(e) {
   if (e.key !== "Enter" && e.type !== "click") {
     return;
   }
@@ -79,6 +80,6 @@ function handleLikeClick(e) {
   totalCount++;
   totalLikesCountElement.textContent = totalCount;
 
-  e.target.removeEventListener("click", handleLikeClick);
-  e.target.removeEventListener("keypress", handleLikeClick);
+  e.target.removeEventListener("click", mediaCardLike);
+  e.target.removeEventListener("keypress", mediaCardLike);
 }

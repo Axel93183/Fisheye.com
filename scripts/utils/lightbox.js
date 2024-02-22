@@ -1,12 +1,12 @@
 const myLightbox = document.getElementById("myLightbox");
-let lightboxCreated = false;
+let lightboxDisplayed = false;
 
 function displayLightBox(e, mediaId) {
   e.preventDefault();
   if (e.key !== "Enter" && e.type !== "click") {
     return;
   }
-  if (!lightboxCreated) {
+  if (!lightboxDisplayed) {
     const mediaElements = document.querySelectorAll(".media-section a");
 
     const mySlides = document.createElement("div");
@@ -52,7 +52,7 @@ function displayLightBox(e, mediaId) {
 
     lightboxContainer.insertBefore(mySlides, firstChild.nextSibling);
 
-    lightboxCreated = true;
+    lightboxDisplayed = true;
   }
 
   const currentSlide = document.getElementById(`${mediaId}`);
@@ -86,12 +86,12 @@ function displayLightBox(e, mediaId) {
   });
 }
 
-const lbCloseCross = document.querySelector(".lightBoxClose");
 function closeLightbox() {
   myLightbox.style.display = "none";
 }
 
 // Close lightBox events
+const lbCloseCross = document.querySelector(".lightBoxClose");
 lbCloseCross.addEventListener("click", closeLightbox);
 lbCloseCross.addEventListener("keypress", (e) => {
   if (e.key !== "Enter") {
