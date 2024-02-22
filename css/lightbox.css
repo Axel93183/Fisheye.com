@@ -38,9 +38,9 @@
   cursor: pointer;
 }
 
-.lightBoxClose i,
-.lightboxNext i,
-.lightboxPrev i {
+.lightBoxClose em,
+.lightboxNext em,
+.lightboxPrev em {
   color: #901c1c;
   font-size: 24px;
 }
