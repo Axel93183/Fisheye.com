@@ -9,7 +9,7 @@ const firstInput = document.getElementById("first-name");
 
 function openModal() {
   const photographerName = document.querySelector(
-    ".photograph-header h2"
+    ".photograph-header h1"
   ).textContent;
   const newText = document.createTextNode(photographerName);
   contactModal.style.display = "block";

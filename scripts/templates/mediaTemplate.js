@@ -29,7 +29,7 @@ function mediaTemplate(media) {
     const mediaInfos = document.createElement("div");
     mediaInfos.className = "media-infos";
 
-    const title = document.createElement("h3");
+    const title = document.createElement("p");
     title.textContent = media.title;
 
     const likesContainer = document.createElement("div");

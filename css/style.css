@@ -178,15 +178,11 @@ h2 {
   color: #901c1c;
 }
 
-.media-infos h3,
+.media-infos > p,
 .media-infos .likes-container p,
 .media-infos .likes-container i {
   font-size: 24px;
   font-style: normal;
-}
-
-.media-infos h3 {
-  font-weight: 400;
 }
 
 .media-infos .likes-container p {
