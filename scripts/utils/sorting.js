@@ -9,8 +9,8 @@ function mediaSort(sortByOption) {
 
 function sortByTitle() {
   mediaSort((a, b) => {
-    const titleA = a.querySelector(".media-infos h3").textContent.toLowerCase();
-    const titleB = b.querySelector(".media-infos h3").textContent.toLowerCase();
+    const titleA = a.querySelector(".media-infos p").textContent.toLowerCase();
+    const titleB = b.querySelector(".media-infos p").textContent.toLowerCase();
 
     return titleA.localeCompare(titleB);
   });
